@@ -15,13 +15,14 @@ public class areavolume {
 
 
 public static void main(String[] args) {
+	
 	//define length and breadth
 	int length= 5;
 	int breadth= 3;
 	int height = 7;
 	//call method getArea
 	int area = getArea(length, breadth);
-	//System.out.println("Area of the given is: "+area);
+	
 	//calling method volume
 	volume(area, height);
 }
