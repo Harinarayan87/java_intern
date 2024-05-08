@@ -1,35 +1,41 @@
 package intern_project;
+
 import java.util.Scanner;
 
 public class calculatetotalsalary {
-	
-	  public static double calculateTotalSalary(String post, double basicSalary, double bonusPercentage) {
-	        // Calculate bonus amount
-	        double bonus = (basicSalary * bonusPercentage) / 100;
-	        // Calculate total salary
-	        double totalSalary = basicSalary + bonus;
-	        return totalSalary;
-	    }
-	
-	    public static void main(String[] args) {
-	        // Calculate total salary for MD
-	        double mdSalary = calculateTotalSalary("MD", 230000, 20);
-	        System.out.println("Total salary for MD: " + mdSalary);
-	        
-	        // Calculate total salary for CEO
-	        double ceoSalary = calculateTotalSalary("CEO", 250000, 25.79);
-	        System.out.println("Total salary for CEO: " + ceoSalary);
-	        
-	        // Calculate total salary for MANAGER
-	        double managerSalary = calculateTotalSalary("MANAGER", 176000, 16);
-	        System.out.println("Total salary for MANAGER: " + managerSalary);
-	        
-	        // Calculate total salary for HELPER
-	        double helperSalary = calculateTotalSalary("HELPER", 145900, 9);
-	        System.out.println("Total salary for HELPER: " + helperSalary);
-	    }
-	    
-	  
-	}
 
+    // Method to calculate total salary based on basic salary and bonus percentage
+    public static double calculateTotalSalary(double basicSalary, double bonusPercentage) {
+        // Calculate bonus amount
+        double bonus = (basicSalary * bonusPercentage) / 100;
+        // Calculate total salary
+        return basicSalary + bonus;
+    }
 
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Array containing different job positions
+        String[] posts = {"MD", "CEO", "MANAGER", "HELPER"};
+
+        // using loop for taking input of basic salary and percentage from different post
+        //loop is initiated according to post
+        for (int i = 0; i < posts.length; i++) {
+           //for basic salary
+            System.out.println("Enter basic salary for " + posts[i] + ":");
+            double basicSalary = scanner.nextDouble();
+
+            // for bonus percentage
+            System.out.println("Enter bonus percentage for " + posts[i] + ":");
+            double bonusPercentage = scanner.nextDouble();
+
+            // Calculate and Print the total salary for the current runnning loop 
+            double totalSalary = calculateTotalSalary(basicSalary, bonusPercentage);
+            System.out.println("Total salary for " + posts[i] + ": " + totalSalary);
+        }
+
+        
+        scanner.close();
+    }
+}
