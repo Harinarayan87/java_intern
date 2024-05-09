@@ -14,6 +14,7 @@ public class simpleinterest {
         t = sc.nextInt();
         System.out.println("Enter the value of Rate(r):");
         r = sc.nextInt();
+        sc.close();
     }
 
     // Method to calculate simple interest and amount
@@ -38,4 +39,5 @@ public class simpleinterest {
         // Pass principal, time, and rate to the processing method to calculate SI and amount
         processing(p, t, r);
     }
+
 }
