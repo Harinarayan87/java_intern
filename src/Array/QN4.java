@@ -7,9 +7,9 @@ public class QN4 {
 		for(int i=0; i<100; i++) {
 			if(i%2==0) {
 				even[n]=i;
-				++n;
+				n++;
 			}}
-		System.out.println("Odd Numbers from 0 to 100 are:");	
+		System.out.println("Even Numbers from 0 to 100 are:");	
 		for(int i=0; i<even.length; i++) {
 			System.out.println(even[i]);
 		}
